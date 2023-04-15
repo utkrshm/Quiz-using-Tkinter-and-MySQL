@@ -1,0 +1,4 @@
+tkinter
+matplotlib
+pillow
+mysql

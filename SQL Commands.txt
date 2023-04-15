@@ -1,0 +1,56 @@
+CREATE DATABASE quiz_project;
+
+USE quiz_project;
+
+CREATE TABLE questions (code VARCHAR(10), question VARCHAR(200), right_answer_choice VARCHAR(5), option_a VARCHAR(75), option_b VARCHAR(75), option_c VARCHAR(75), option_d VARCHAR(75));
+
+insert into questions values ('INDR-001', 'What was the previous name of the "TI Next" mall?', 'B', 'Northern Mall', 'Central Mall', 'Eastern Mall', 'Western Mall');
+
+insert into questions values ('INDR-002', 'What does the "AB" in AB Road stand for?', 'A', 'Agra Bombay', 'Ahmedabad Bhopal', 'Ambala Bhojpur', 'Aurangabad Bikaner');
+
+insert into questions values ('INDR-003', 'Which of the following numbers is associated with a very famous food street?', 'D', '77', '29', '43', '56');
+
+insert into questions values ('INDR-004', "What was Indore's first water park?", 'A', 'Mayank Blue Water Park', 'Arpit Blue Water Park', 'Raj Blue Water Park', 'Ambedkar Blue Water Park');
+
+insert into questions values ('INDR-005', 'What is the Pipliyahana Square also known as?', 'C', 'Wimbeldon Square', 'Champions Trophy Square', 'World Cup Square', 'Kabaddi World Cup Square');
+
+insert into questions values ('Food-001', 'Which country invented ice cream?', 'B', 'Pakistan', 'China', 'Scotland', 'Ice Cream Land');
+
+insert into questions values ('Food-002', "What amount is a baker's dozen?", 'C', '6', '12', '13', '15');
+
+insert into questions values ('Food-003', "Who is the most famous chef?", 'A', 'Gordon Ramsay', 'Bourbon Chimpanzee', 'Warden Nancy', 'Jordan Fancy');
+
+insert into questions values ('Food-004', "What nuts are used to make marzipan?", 'C', 'Marzi nuts', 'Hazelnuts', 'Almond nuts', 'Deez nuts');
+
+insert into questions values ('SPRT-001', "How long is an Olympic Swimming Pool?", 'D', '25m', '100m', '69m', '50m');
+
+insert into questions values ('SPRT-002', "How many points is a doubles game of Tennis played to?", 'B', '21', '11', '20', '10');
+
+insert into questions values ('SPRT-003', "By number of global fans which of these sports is the most popular?", 'D', 'Soccer', 'Basketball', 'Cricket', 'European Football');
+
+insert into questions values ('SPRT-004', "In which sport do teams pull at the opposite ends of a rope??", 'D', 'Monopoly', 'Marriage', 'Pole Vaulting', 'Tug of War');
+
+insert into questions values ('TEST-001', 'What is the purpose of this quiz?', 'D', 'To play with', 'To test your concepts', 'To pass in 12th Boards', 'To score merit in 12th Boards');
+
+insert into questions values ('TEST-002', 'What is the full form of IP?', 'C', 'Information Practicals', 'Computer Science', 'Informatics Practices', 'Information Practice');
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE quiz_history (play_code varchar(10) primary key, date date, name varchar(75), cls_sec varchar(20), no_right_answers integer, no_wrong_answers integer, percent float(5, 2));
+
+insert into quiz_history values ('TEST-1', curdate(), 'Test Student 1', '13 A', 4, 1, 80);
+
+insert into quiz_history values ('TEST-2', curdate(), 'Test Student 2', '13 B', 3, 2, 60);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE player_result (q_no integer, question varchar (200), player_choice varchar(5), right_choice varchar(5), option_a varchar(75), option_b varchar(75), option_c varchar(75), option_d varchar(75), status integer); 	
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE login (role varchar(10), password varchar(10));
+
+insert into login values ('admin', 'admin');
+
+insert into login values ('guest', 'guest');
+

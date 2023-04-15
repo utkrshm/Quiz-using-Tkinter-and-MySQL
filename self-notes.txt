@@ -1,0 +1,12 @@
+To get the number of right answers from the player_result table, use the following command:
+        cur.execute('SELECT SUM(status) FROM PLAYER_RESULT;')
+        no_right_answers = cur.fetchall()[0][0]
+
+To get the number of wrong answers from the player_result table, use the following expression:
+        no_wrong_answers = total_no_of_questions - no_right_answers
+
+To get the percentage of correct answers from the player_result table, use the following command:
+        cur.execute('SELECT ROUND(AVG(status)*100, 2) FROM PLAYER_RESULT;')
+        percent_right_answers = cur.fetchall()[0][0]
+
+Result Analysis is to be done after the current player's information has been added to the QUIZ_HISTORY table.
